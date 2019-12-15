@@ -59,6 +59,6 @@ class Main extends React.Component {
 }
 
 // =============================
-// EXPORT COMPONENT
+// EXPORT COMPONENT: MAIN
 // =============================
 export default Main;

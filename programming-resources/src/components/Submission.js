@@ -1,5 +1,11 @@
+// =============================
+// DEPENDENCIES
+// =============================
 import React from 'react';
 
+// =============================
+// COMPONENT CLASS: SUBMISSION
+// =============================
 class Submission extends React.Component {
   render() {
     return (
@@ -17,5 +23,7 @@ class Submission extends React.Component {
   }
 }
 
-
+// =============================
+// EXPORT COMPONENT: SUBMISSION
+// =============================
 export default Submission;
