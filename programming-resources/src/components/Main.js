@@ -42,12 +42,19 @@ class Main extends React.Component {
     }).catch(error => console.log(error))
   }
 
+  // Lifecycle function to pull data to render at page load
+  componentDidMount() {
+    this.fetchSubmissions()
+  }
+
   render() {
     return (
-      <div>
-          <Submission />
+      <main>
+          {this.state.submissions.map((submissionData) => (
+            <Submission key={submissionData.id} submissionData={submissionData} />
+          ))}
           <Form />
-      </div>
+      </main>
     )
   }
 }
