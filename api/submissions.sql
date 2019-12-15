@@ -1,7 +1,7 @@
 BEGIN;
 
 CREATE DATABASE RESOURCES;
-/c resources;
+\c resources;
 
 CREATE TABLE submissions(
   id SERIAL,
