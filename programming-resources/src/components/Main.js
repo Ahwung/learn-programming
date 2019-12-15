@@ -20,7 +20,28 @@ if (process.env.NODE_ENV === 'development') {
   console.log('this is for heroku');
 }
 
+// =============================
+// COMPONENT CLASS: MAIN
+// =============================
 class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      submissions: []
+    }
+  }
+  
+  // Function to fetch submissions from API
+  fetchSubmissions = () => {
+    fetch(`${baseUrl}/submissions`)
+    .then(data => data.json())
+    .then(jsonData => {
+      this.setState({
+        submissions: jsonData
+      })
+    }).catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
