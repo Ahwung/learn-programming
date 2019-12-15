@@ -14,6 +14,7 @@ class Form extends React.Component {
         <input type="text" id="url"></input>
         <label htmlFor="cost">Cost: </label>
         <input type="number" id="cost"></input>
+        <input type="submit" value="submit"></input>
       </form>
     )
   }
