@@ -1,7 +1,6 @@
 // =============================
 // DEPENDENCIES
 // =============================
-
 // Packages
 import React from 'react';
 
@@ -12,7 +11,6 @@ import Form from './Form.js'
 // =============================
 // LINK TO CONNECT TO API
 // =============================
-
 let baseUrl = '';
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:8888'
@@ -47,6 +45,7 @@ class Main extends React.Component {
     this.fetchSubmissions()
   }
 
+  // Render function
   render() {
     return (
       <main>
@@ -59,5 +58,7 @@ class Main extends React.Component {
   }
 }
 
-
+// =============================
+// EXPORT COMPONENT
+// =============================
 export default Main;
