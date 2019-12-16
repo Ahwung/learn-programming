@@ -32,13 +32,24 @@ class App extends React.Component {
       cost: '',
       id: null
     }
+    let formInputs2 = {
+      title: '',
+      description: '',
+      id: null
+    }
 
     switch (view) {
       case 'home':
         pageTitle = 'View Resources'
         break
+      case 'snippets':
+        pageTitle = 'View All Code Snippets'
+        break
       case 'addSubmission':
         pageTitle = 'New Submission'
+        break
+      case 'addSnippet':
+        pageTitle = 'New Code Snippet'
         break
       case 'editSubmission':
         pageTitle = 'Edit Submission'
@@ -51,6 +62,14 @@ class App extends React.Component {
           id: postData.id
         }
         break
+      case 'editSnippet':
+        pageTitle = 'Edit Code Snippet'
+        formInputs2 = {
+          title: postData.title,
+          description: postData.description,
+          id: postData.id
+        }
+        break
       default:
         break
     }
@@ -60,7 +79,8 @@ class App extends React.Component {
         page: view,
         pageTitle: pageTitle
       },
-      formInputs: formInputs
+      formInputs: formInputs,
+      formInputs2: formInputs2
     })
   }
   render() {
@@ -72,6 +92,7 @@ class App extends React.Component {
           <Main
             handleView={this.handleView}
             formInputs={this.state.formInputs}
+            formInputs2={this.state.formInputs2}
             view={this.state.view}
           />
         </div>

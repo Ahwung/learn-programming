@@ -8,8 +8,8 @@ class Aside extends React.Component {
         <ul>
           <li onClick={() => {this.props.handleView('home')}}>HOME</li>
           <li onClick={() => {this.props.handleView('addSubmission')}}>NEW RESOURCE</li>
-          <li> CODE SNIPPETS </li>
-          <li> NEW CODE SNIPPET </li>
+          <li onClick={() => {this.props.handleView('snippets')}}>SNIPPETS</li>
+          <li onClick={() => {this.props.handleView('addSnippet')}}>NEW SNIPPET</li>
         </ul>
       </aside>
     )
