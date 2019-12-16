@@ -60,8 +60,8 @@ Class Submissions {
   }
 
   static function update($updated_submission){
-    echo "update in progress <br />";
-    var_dump($updated_submission);
+    // echo "update in progress <br />";
+    // var_dump($updated_submission);
     $query = "UPDATE submissions SET title = $1, tool = $2, description = $3, url = $4, cost = $5 WHERE id = $6";
     $query_params = array($updated_submission->title, $updated_submission->tool, $updated_submission->description, $updated_submission->url, $updated_submission->cost, $updated_submission->id);
     $result = pg_query_params($query, $query_params);
