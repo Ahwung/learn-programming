@@ -73,6 +73,9 @@ aside ul {
   padding: 0;
 }
 
+.submission{
+  width: 500px
+}
 .aside-container > ul, h1{
   margin-top: 20px;
   margin-left: 30px;
@@ -97,7 +100,49 @@ aside ul {
   /* font-size: 16px; */
   color: black;
 }
-.submission-options > ul:hover {
+.subEdit:hover{
+  background: brown;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.subDelete:hover{
+  background: brown;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.codeSnippet{
+  width: 500px;
+}
+
+.snippet-options > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.snippet-options li {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.snippet-options > ul:hover {
+}
+
+.snipedit:hover{
+  background: brown;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.snipdelete:hover{
   background: brown;
   color: white;
   cursor: pointer;

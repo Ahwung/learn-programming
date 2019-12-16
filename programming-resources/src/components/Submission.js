@@ -23,10 +23,10 @@ class Submission extends React.Component {
           </div>
           <div className="submission-options">
             <ul className="submission-list">
-              <li onClick={() => {
+              <li className="subEdit" onClick={() => {
                 this.props.handleView('editSubmission', this.props.submissionData)}}>
                 edit submission</li>
-              <li onClick={() =>  {this.props.handleDelete(this.props.submissionData.id)}}>delete post</li>
+              <li className="subDelete" onClick={() =>  {this.props.handleDelete(this.props.submissionData.id)}}>delete post</li>
             </ul>
           </div>
         </div>
