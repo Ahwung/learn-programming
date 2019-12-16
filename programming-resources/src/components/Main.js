@@ -28,7 +28,7 @@ class Main extends React.Component {
       submissions: []
     }
   }
-  
+
   // Function to fetch submissions from API
   fetchSubmissions = () => {
     fetch(`${baseUrl}/submissions`)
@@ -46,13 +46,24 @@ class Main extends React.Component {
   }
 
   // Render function
-  render() {
+  render () {
     return (
       <main>
-          {this.state.submissions.map((submissionData) => (
-            <Submission key={submissionData.id} submissionData={submissionData} />
-          ))}
-          <Form />
+      <h1>{this.props.view.pageTitle}</h1>
+
+      { this.props.view.page === 'home'
+        ? this.state.submissions.map((submissionData) => (
+            <Submission
+              handleView={this.props.handleView}
+              key={submissionData.id}
+              submissionData={submissionData}
+            />
+          ))
+        : <Form
+          formInputs={this.props.formInputs}
+          view={this.props.view}
+        />
+      }
       </main>
     )
   }
