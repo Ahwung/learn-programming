@@ -130,7 +130,7 @@ class Main extends React.Component {
     })
       .then(updatedPost => {
         // switch back to the home view after editing a post
-        this.props.handleView('home')
+        this.props.handleView('snippets')
         this.fetchSnippets()
       })
       .catch(err => console.log(err))
