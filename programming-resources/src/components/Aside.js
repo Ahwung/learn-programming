@@ -3,9 +3,13 @@ import React from 'react';
 class Aside extends React.Component {
   render() {
     return (
-      <div> 
-          This is the aside component
-      </div>
+      <aside>
+        <h1> NAVIGATION </h1>
+        <ul>
+          <li> HOME </li>
+          <li> NEW SUBMISSION </li>
+        </ul>
+      </aside>
     )
   }
 }
