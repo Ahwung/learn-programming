@@ -14,7 +14,7 @@ if($_REQUEST['action'] === 'index'){
   $all_submissions = Submissions::create($new_submission);
   echo json_encode($all_submissions);
 } else if ($_REQUEST['action'] === 'update') {
-  echo "hello";
+  // echo "hello";
   $request_body = file_get_contents('php://input');
   $body_object = json_decode($request_body);
   $updated_submission = new Submission($_REQUEST['id'], $body_object->title, $body_object->tool, $body_object->description, $body_object->url, $body_object->cost);
