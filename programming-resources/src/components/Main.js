@@ -13,7 +13,7 @@ import Form from './Form.js'
 // =============================
 let baseUrl = '';
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://localhost:8888'
+  baseUrl = 'https://serene-atoll-56752.herokuapp.com'
 } else {
   console.log('this is for heroku');
 }
@@ -28,7 +28,7 @@ class Main extends React.Component {
       submissions: []
     }
   }
-  
+
   // Function to fetch submissions from API
   fetchSubmissions = () => {
     fetch(`${baseUrl}/submissions`)
@@ -40,19 +40,91 @@ class Main extends React.Component {
     }).catch(error => console.log(error))
   }
 
+  //function to handle creation of new submissions
+  createSubmission = (createData) => {
+    fetch(`${baseUrl}/submissions`, {
+      body: JSON.stringify(createData),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(createdPost => {
+      return createdPost.json()
+    })
+    .then(jsonedPost => {
+      console.log(this.props);
+      this.props.handleView('home')
+      this.setState(prevState => {
+        prevState.submissions = jsonedPost
+        return { submissions: prevState.submissions }
+      })
+    })
+    .catch(err => console.log(err))
+  }
+
+  //function to handle update of submissions
+  updateSubmission= (updateData) => {
+    fetch(`${baseUrl}/submissions/${updateData.id}`, {
+      body: JSON.stringify(updateData),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(updatedPost => {
+        // switch back to the home view after editing a post
+        this.props.handleView('home')
+        this.fetchSubmissions()
+      })
+      .catch(err => console.log(err))
+  }
+
+  deleteSubmission = (id) => {
+    fetch(`${baseUrl}/submissions/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(json => {
+        this.setState(prevState => {
+          const submissions = prevState.submissions.filter(submission => submission.id !== id)
+          return { submissions }
+        })
+      })
+      .catch(err => console.log(err))
+    }
   // Lifecycle function to pull data to render at page load
   componentDidMount() {
     this.fetchSubmissions()
   }
 
   // Render function
-  render() {
+  render () {
     return (
       <main>
-          {this.state.submissions.map((submissionData) => (
-            <Submission key={submissionData.id} submissionData={submissionData} />
-          ))}
-          <Form />
+      <h1>{this.props.view.pageTitle}</h1>
+
+      { this.props.view.page === 'home'
+        ? this.state.submissions.map((submissionData) => (
+            <Submission
+              handleView={this.props.handleView}
+              key={submissionData.id}
+              submissionData={submissionData}
+              handleDelete={this.deleteSubmission}
+            />
+          ))
+        : <Form
+          handleUpdate={this.updateSubmission}
+          handleCreate={this.createSubmission}
+          formInputs={this.props.formInputs}
+          view={this.props.view}
+        />
+      }
       </main>
     )
   }

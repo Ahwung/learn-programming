@@ -11,12 +11,24 @@ class Submission extends React.Component {
     return (
       <article>
         <div className="submission">
-          <h2>Course Name: {this.props.submissionData.title}</h2>
-          <h2>Learning Objective: {this.props.submissionData.tool}</h2>
-          <h3>Cost: {this.props.submissionData.cost}$</h3>
-          <h3>Description</h3>
-          <p>{this.props.submissionData.description}</p>
-          <a href={this.props.submissionData.url} target="_blank" rel="noopener noreferrer">Link to Resource</a>
+          <div className="submission-header">
+            <h2>Course Name: {this.props.submissionData.title}</h2>
+            <h2>Learning Objective: {this.props.submissionData.tool}</h2>
+            <h3>Cost: {this.props.submissionData.cost}$</h3>
+          </div>
+          <div className="submission-body">
+            <h3>Description</h3>
+            <p>{this.props.submissionData.description}</p>
+            <a href={this.props.submissionData.url} target="_blank" rel="noopener noreferrer">Link to Resource</a>
+          </div>
+          <div className="submission-options">
+            <ul className="submission-list">
+              <li onClick={() => {
+                this.props.handleView('editSubmission', this.props.submissionData)}}>
+                edit submission</li>
+              <li onClick={() =>  {this.props.handleDelete(this.props.submissionData.id)}}>delete post</li>
+            </ul>
+          </div>
         </div>
       </article>
     )
