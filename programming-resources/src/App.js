@@ -88,7 +88,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <div className="container">
+        <div className="main-container">
           <Aside handleView={this.handleView}/>
           <Main
             handleView={this.handleView}

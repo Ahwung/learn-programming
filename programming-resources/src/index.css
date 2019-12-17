@@ -15,20 +15,31 @@ body {
   padding: 30px 0px;
 }
 
-.container{
+.main-container{
   display: flex;
   font-family: sans-serif;
+  margin-left: 0%;
 
   /* flex-direction: space-around; */
 }
 
+.aside-container{
+  margin: 0;
+  min-height: 100vh;
+  padding-right: 30px;
+}
+
+main {
+  width: 100%;
+}
+
 .field1{
-  width: 300px;
+  width: 90%;
   margin-top: 60px;
 }
 
 .field2{
-  width: 300px;
+  width: 90%;
   margin-top: 60px;
 }
 /* form{
@@ -101,7 +112,7 @@ aside ul {
 }
 
 .submission{
-  width: 500px;
+  width: 90%;
   padding: 20px;
   margin: 20px;
   border: 1px solid rgba(255, 0, 0, 0.3);

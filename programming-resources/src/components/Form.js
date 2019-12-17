@@ -42,6 +42,7 @@ class Form extends React.Component {
   render() {
     return (
       <Field onSubmit={this.handleSubmit} className="field1">
+        {/* <h1>Add A New Resource</h1> */}
         <Field.Group>
           <Field.Text className="text-muted">Title of Resource</Field.Text>
           <Field.Control type="text" placeholder="add title" id="title" value={this.state.title} onChange={this.handleChange}></Field.Control>
