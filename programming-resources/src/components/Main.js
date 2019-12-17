@@ -228,7 +228,6 @@ class Main extends React.Component {
 
     return (
       <main>
-      <h1>{this.props.view.pageTitle}</h1>
       {view1}
       </main>
     )
