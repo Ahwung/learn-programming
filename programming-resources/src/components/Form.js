@@ -42,6 +42,7 @@ class Form extends React.Component {
   render() {
     return (
       <Field onSubmit={this.handleSubmit} className="field1">
+        {/* <h1>Add A New Resource</h1> */}
         <Field.Group>
           <Field.Text className="text-muted">Title of Resource</Field.Text>
           <Field.Control type="text" placeholder="add title" id="title" value={this.state.title} onChange={this.handleChange}></Field.Control>
@@ -62,8 +63,8 @@ class Form extends React.Component {
           <Field.Text className="text-muted">Cost of course in USD</Field.Text>
           <Field.Control type="number" id="cost" placeholder="cost" value={this.state.cost} onChange={this.handleChange}></Field.Control>
         </Field.Group>
-        <Field.Group>
-          <Button variant="primary" type="submit" value="submit">Submit</Button>
+        <Field.Group className="submit">
+          <Button className="submitBtn" variant="primary" type="submit" value="submit">Submit</Button>
         </Field.Group>
       </Field>
     )

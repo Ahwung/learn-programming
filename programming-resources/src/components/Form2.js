@@ -44,8 +44,8 @@ class Form2 extends React.Component {
           <Field.Text className="text-muted">Insert Code</Field.Text>
           <Field.Control as="textarea" rows="5" id="description" placeholder="add a description" value={this.state.description} onChange={this.handleChange}></Field.Control>
         </Field.Group>
-        <Field.Group>
-          <Button variant="primary" type="submit" value="submit">Submit</Button>
+        <Field.Group className="submit">
+          <Button className="submitBtn" variant="primary" type="submit" value="submit">Submit</Button>
         </Field.Group>
       </Field>
     )
