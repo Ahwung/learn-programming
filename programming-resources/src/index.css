@@ -34,13 +34,15 @@ main {
 }
 
 .field1{
-  width: 90%;
+  width: 70%;
   margin-top: 60px;
+  padding-left: 50px;
 }
 
 .field2{
-  width: 90%;
+  width: 70%;
   margin-top: 60px;
+  padding-left: 50px;
 }
 /* form{
   color: blue;
@@ -115,6 +117,7 @@ aside ul {
   width: 90%;
   padding: 20px;
   margin: 20px;
+  margin-left: 50px;
   border: 1px solid rgba(255, 0, 0, 0.3);
   border-radius: 5px;
 }
@@ -201,4 +204,17 @@ aside ul {
   color: white;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.submit{
+  text-align: center;
+}
+
+.submitBtn{
+  width: 150px;
+  padding: 25px;
+}
+
+.codeSnippet{
+  margin-left: 50px;
 }

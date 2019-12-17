@@ -63,8 +63,8 @@ class Form extends React.Component {
           <Field.Text className="text-muted">Cost of course in USD</Field.Text>
           <Field.Control type="number" id="cost" placeholder="cost" value={this.state.cost} onChange={this.handleChange}></Field.Control>
         </Field.Group>
-        <Field.Group>
-          <Button variant="primary" type="submit" value="submit">Submit</Button>
+        <Field.Group className="submit">
+          <Button className="submitBtn" variant="primary" type="submit" value="submit">Submit</Button>
         </Field.Group>
       </Field>
     )
