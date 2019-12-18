@@ -12,9 +12,13 @@ We communicated primarily over slack and zoom.
 
 # User Stories
 User is able to create resource submissions.
+
 user is able to delete those submissions.
+
 User is able to edit those submissions.
+
 User is able to do all of the above to a seperete CodeSnippets model.
+
 User should have a clean and fluid experience with the websites navigation.
 
 Technology Used
