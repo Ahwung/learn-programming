@@ -21,11 +21,15 @@ User is able to do all of the above to a seperete CodeSnippets model.
 
 User should have a clean and fluid experience with the websites navigation.
 
-Technology Used
+
+# Technology Used
 
 React
+
 PHP
+
 SQL
+
 HTML+CSS(Bootstrap css framework)
 
 
