@@ -2,7 +2,6 @@
 // DEPENDENCIES
 // =============================
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 // =============================
 // COMPONENT CLASS: SUBMISSION
