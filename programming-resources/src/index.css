@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  color: blue;
+  color: white;
   height: 330px;
   background-image: url(https://d1y8sb8igg2f8e.cloudfront.net/images/shutterstock_148972376.width-800.jpg);
   background-size: cover;
@@ -151,12 +151,21 @@ aside ul {
   margin-top: 30px;
 }
 
+article {
+  width: 100%;
+}
+
 .codeSnippet{
-  width: 500px;
+  width: 90%;
   padding: 20px;
   margin: 20px;
   border: 1px solid rgba(255, 0, 0, 0.3);
   border-radius: 5px;
+  background-color: white;
+}
+
+.snippet-header > h1 {
+  font-family: var(--card-font);
 }
 .aside-container > ul, h1{
   margin-top: 20px;
@@ -198,10 +207,6 @@ aside ul {
   border-radius: 5px;
 }
 
-.codeSnippet{
-  width: 500px;
-}
-
 .snippet-options > ul {
   list-style-type: none;
   padding: 0;
@@ -209,11 +214,13 @@ aside ul {
 
 .snippet-options li {
   display: inline-block;
-  width: 50%;
+  width: 45%;
   text-align: center;
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
+  border: 1px solid black;
+  margin: 3px 10px;
 }
 
 .snipedit:hover{
