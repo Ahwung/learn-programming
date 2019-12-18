@@ -13,12 +13,12 @@ class Submission extends React.Component {
       <article>
         <div className="submission">
           <div className="submission-header">
-            <h2>Course Name: {this.props.submissionData.title}</h2>
-            <h2>Learning Objective: {this.props.submissionData.tool}</h2>
-            <h3>Cost: {this.props.submissionData.cost}$</h3>
+            <h1>{this.props.submissionData.title}</h1>
+            <h4>Learning Objective: {this.props.submissionData.tool}</h4>
+            <h4>Cost: {this.props.submissionData.cost}$</h4>
           </div>
           <div className="submission-body">
-            <h3>Description</h3>
+            <h4>Description</h4>
             <p>{this.props.submissionData.description}</p>
             <a href={this.props.submissionData.url} target="_blank" rel="noopener noreferrer">Link to Resource</a>
           </div>
@@ -28,7 +28,6 @@ class Submission extends React.Component {
                 this.props.handleView('editSubmission', this.props.submissionData)}}>
                 edit submission</li>
               <li className="subDelete" onClick={() =>  {this.props.handleDelete(this.props.submissionData.id)}}>delete submission</li>
-              <Button variant="primary">Primary</Button>
             </ul>
           </div>
         </div>
